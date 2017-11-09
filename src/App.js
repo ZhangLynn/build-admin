@@ -11,23 +11,31 @@ import './App.css';
 
 
 const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
+    <div>
+        <h2>Home</h2>
+    </div>
 )
- 
 
-const Category = () => (
-  <div>
-    <h2>Category</h2>
-  </div>
-)
- 
+
+const Category = ({match}) => {
+       return(
+           <div>
+                <ul>
+                    <li><Link to={`${match.url}/shoes`}>Shoes</Link></li>
+                    <li><Link to={`${match.url}/boots`}>Boots</Link></li>
+                    <li><Link to={`${match.url}/footwear`}>Footwear</Link></li>
+                </ul>
+                <Route path={`${match.path}/:name`} render= {({match}) =>( <div> <h3> {match.params.name} </h3></div>)}/>
+            </div>
+       )
+}
+
+
 
 const Products = () => (
-  <div>
-    <h2>Products</h2>
-  </div>
+    <div>
+        <h2>Products</h2>
+    </div>
 )
  
 
@@ -37,17 +45,15 @@ class App extends React.Component {
       <div>
         <nav className="navbar navbar-light">
           <ul className="nav navbar-nav">
- 
             <li><Link to="/">Homes</Link></li>
             <li><Link to="/category">Category</Link></li>
             <li><Link to="/products">Products</Link></li>
- 
+            <Route exact path="/" component={Home}/>
+            <Route path="/category" component={Category}/>
+            <Route path="/products" component={Products}/>
           </ul>
          </nav>
-           <Route path="/" component={Home}/>
-           <Route path="/category" component={Category}/>
-           <Route path="/products" component={Products}/>
- 
+           <div>{this.props.children}</div>
       </div>
     )
   }

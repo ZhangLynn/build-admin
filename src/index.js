@@ -7,16 +7,17 @@ import {
   BrowserRouter as Router,
   Route,
   Link,
-  IndexRouter
 } from 'react-router-dom'
 
 import App from './App';
 
- 
+
 
 
 ReactDOM.render(
     <Router>    
-        <Route path='/' component={App}></Route>
+        <Route path='/' component={App}>
+
+        </Route>
     </Router>, document.getElementById('root'));
 registerServiceWorker();
