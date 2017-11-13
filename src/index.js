@@ -10,14 +10,16 @@ import {
 } from 'react-router-dom'
 
 import App from './App';
-
+import MyLayout from "./layout";
+import L from "./l";
 
 
 
 ReactDOM.render(
-    <Router>    
-        <Route path='/' component={App}>
-
-        </Route>
+    <Router>
+        {/*<div>*/}
+            {/*<Route path='/app' component={App}></Route>*/}
+            <Route path='/' component={L}></Route>
+        {/*</div>*/}
     </Router>, document.getElementById('root'));
 registerServiceWorker();
