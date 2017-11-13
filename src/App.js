@@ -38,13 +38,13 @@ class App extends React.Component {
         <nav className="navbar navbar-light">
           <ul className="nav navbar-nav">
  
-            <li><Link to="/">Homes</Link></li>
+            <li><Link to="/home">Homes</Link></li>
             <li><Link to="/category">Category</Link></li>
             <li><Link to="/products">Products</Link></li>
  
           </ul>
          </nav>
-           <Route path="/" component={Home}/>
+           <Route path="/home" component={Home}/>
            <Route path="/category" component={Category}/>
            <Route path="/products" component={Products}/>
  
