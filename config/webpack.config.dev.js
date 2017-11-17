@@ -120,7 +120,7 @@ module.exports = {
             loader: require.resolve('eslint-loader'),
           },
         ],
-        include: paths.appSrc,
+        include: paths.appSrc,//src
       },
       {
         // "oneOf" will traverse all following loaders until one will
@@ -164,6 +164,7 @@ module.exports = {
                 loader: require.resolve('css-loader'),
                 options: {
                   importLoaders: 1,
+                  // modules: true
                 },
               },
               {
