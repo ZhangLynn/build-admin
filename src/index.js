@@ -9,7 +9,7 @@ import {
   Link,
 } from 'react-router-dom'
 
-import MyLayout from './MyLayout'
+import MyLayout from './myMenu'
 import './index.css'
 // import Login from './login/login'
 

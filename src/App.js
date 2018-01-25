@@ -43,19 +43,19 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-light">
-          <ul className="nav navbar-nav">
-            <li><Link to="/home">Homes</Link></li>
+{/*        <nav className="navbar navbar-light">*/}
+{/*          <ul className="nav navbar-nav">*/}
+{/*            <li><Link to="/home">Homes</Link></li>*/}
 
-            <li><Link to="/category">Category</Link></li>
-            <li><Link to="/products">Products</Link></li>
-            <Route exact path="/" component={Home}/>
-            <Route path="/category" component={Category}/>
-            <Route path="/products" component={Products}/>
-          </ul>
-         </nav>
+{/*            <li><Link to="/category">Category</Link></li>*/}
+{/*            <li><Link to="/products">Products</Link></li>*/}
+            {/*<Route exact path="/" component={Home}/>*/}
+            {/*<Route path="/category" component={Category}/>*/}
+            {/*<Route path="/products" component={Products}/>*/}
+{/*          </ul>*/}
+{/*         </nav>*/}
 
-           <div>{this.props.children}</div>
+{/*           <div>{this.props.children}</div>*/}
       </div>
     )
   }
