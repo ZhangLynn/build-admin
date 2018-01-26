@@ -110,6 +110,7 @@ class MyLayout extends React.Component{
             mainHeader:mainHeader
         });
     };
+    //测试切换账户
     render(){
         return (
             <div>
