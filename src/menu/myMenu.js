@@ -97,7 +97,7 @@ class MyLayout extends React.Component{
             current: 'mail',
             mainHeader:'index'
         };
-
+        this.showSubheader=this.showSubheader.bind(this)
     }
     handleClick = (e) => {
         console.log('click ', e);
@@ -105,10 +105,16 @@ class MyLayout extends React.Component{
             current: e.key,
         });
     };
-    showSubheader=(mainHeader)=>{
+    // showSubheader=(mainHeader)=>{
+    //     this.setState({
+    //         mainHeader:mainHeader
+    //     });
+    // };
+    showSubheader(mainHeader){
         this.setState({
             mainHeader:mainHeader
         });
+        console.log(mainHeader)
     };
     //测试切换账户
     render(){
@@ -124,7 +130,7 @@ class MyLayout extends React.Component{
                             <Link to="/home" onMouseOver={()=>{this.showSubheader('index')}}>首页</Link>
                         </Menu.Item>
                         <Menu.Item key="charts">
-                            <Link to="/charts" onMouseOver={this.showSubheader.bind(null,'charts')}>图表页</Link>
+                            <Link to="/charts" onMouseOver={this.showSubheader.bind(this,'charts')}>图表页</Link>
                         </Menu.Item>
                         <Menu.Item key="table">
                             <Link to="/table" onMouseOver={this.showSubheader.bind(null,'table')}>表格页</Link>
