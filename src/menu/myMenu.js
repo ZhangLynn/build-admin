@@ -1,4 +1,5 @@
-// import App from './App'
+import Overview from '../home/overview'
+import ChartsOhter from "../charts/charts_other"
 import Test from './restRouter'
 import React from 'react';
 import {
@@ -11,13 +12,6 @@ import {Menu,Button,notification,Icon,Row,Col} from 'antd';
 import './MyLayout.css'
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
-
-const Overview = () => (
-    <div>
-        <h2>Overview</h2>
-    </div>
-);
-
 
 const Category = ({match}) => {
     return(
@@ -148,8 +142,8 @@ class MyLayout extends React.Component{
                     </Col>
                     <Col span="20">
                         <div className="layout-body">
-                            <Route exact path="/overview" component={Test}/>
-                            <Route path="/charts" component={Category}/>
+                            <Route exact path="/overview" component={Overview}/>
+                            <Route path="/charts_other" component={ChartsOhter}/>
                             <Route path="/units" component={Products}/>
                         </div>
                     </Col>
