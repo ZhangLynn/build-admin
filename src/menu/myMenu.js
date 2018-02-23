@@ -7,7 +7,7 @@ import {
     Link,
     IndexRouter
 } from 'react-router-dom'
-import {Menu,Button,notification,Icon} from 'antd';
+import {Menu,Button,notification,Icon,Row,Col} from 'antd';
 import './MyLayout.css'
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
@@ -42,10 +42,10 @@ const menu = {
     ],
     charts: [
         {
-            "en": "m_app",
+            "en": "charts_map",
             "ch": "地图"
         }, {
-            "en": "m_domain",
+            "en": "charts_other",
             "ch": "其它图表"
         },
     ],
@@ -100,62 +100,61 @@ class MyLayout extends React.Component{
         this.showSubheader=this.showSubheader.bind(this)
     }
     handleClick = (e) => {
-        console.log('click ', e);
         this.setState({
             current: e.key,
         });
     };
-    // showSubheader=(mainHeader)=>{
-    //     this.setState({
-    //         mainHeader:mainHeader
-    //     });
-    // };
     showSubheader(mainHeader){
         this.setState({
             mainHeader:mainHeader
         });
-        console.log(mainHeader)
     };
     //测试切换账户
     render(){
         return (
             <div>
-                <div className="layout-header">
-                    <Menu
-                        onClick={this.handleClick}
-                        selectedKeys={[this.state.current]}
-                        mode="horizontal"
-                    >
-                        <Menu.Item key="home">
-                            <Link to="/home" onMouseOver={()=>{this.showSubheader('index')}}>首页</Link>
-                        </Menu.Item>
-                        <Menu.Item key="charts">
-                            <Link to="/charts" onMouseOver={this.showSubheader.bind(this,'charts')}>图表页</Link>
-                        </Menu.Item>
-                        <Menu.Item key="table">
-                            <Link to="/table" onMouseOver={this.showSubheader.bind(null,'table')}>表格页</Link>
-                        </Menu.Item>
-                        <Menu.Item key="units">
-                            <Link to="/units" onMouseOver={this.showSubheader.bind(null,'units')}>自定义组件页</Link>
-                        </Menu.Item>
-                    </Menu>
-                </div>
-                <div className="layout-subheader">
-                    <Menu mode="horizontal">
-                        {
-                            menu[this.state.mainHeader].map(value=>{
-                                return <Menu.Item key={value.en}>
-                                    <Link to={value.en}>{value.ch}</Link>
-                                </Menu.Item>
-                            })
-                        }
-                    </Menu>
-                </div>
-                <div className="layout-body">
-                    <Route exact path="/overview" component={Test}/>
-                    <Route path="/charts" component={Category}/>
-                    <Route path="/units" component={Products}/>
-                </div>
+                <Row>
+                    <Col span="3">
+                        <div className="layout-header">
+                            <Menu
+                                onClick={this.handleClick}
+                                // selectedKeys={[this.state.current]}
+                                defaultSelectedKeys={['overview']}
+                                defaultOpenKeys={['index']}
+                                mode="inline"
+                            >
+
+                                <SubMenu key="index" title="首页" onMouseover={()=>{this.showSubheader('index')}}>
+                                    <Menu.Item key="overview">
+                                        <Link to="overview">总览</Link>
+                                    </Menu.Item>
+                                </SubMenu>
+                                <SubMenu key="charts" title="图表页" onMouseover={()=>{this.showSubheader('charts')}}>
+                                    <Menu.Item key="charts_map">
+                                        <Link to="charts_map">地图</Link>
+                                    </Menu.Item>
+                                    <Menu.Item key="charts_other">
+                                        <Link to="charts_other">其它图表</Link>
+                                    </Menu.Item>
+                                </SubMenu>
+                                <SubMenu key="table" title="表格页" onMouseover={()=>{this.showSubheader('table')}}>
+
+                                </SubMenu>
+                                <SubMenu key="units" title="自定义组件页" onMouseover={()=>{this.showSubheader('units')}}>
+
+                                </SubMenu>
+                            </Menu>
+                        </div>
+                    </Col>
+                    <Col span="20">
+                        <div className="layout-body">
+                            <Route exact path="/overview" component={Test}/>
+                            <Route path="/charts" component={Category}/>
+                            <Route path="/units" component={Products}/>
+                        </div>
+                    </Col>
+                </Row>
+
             </div>
         )||""
     }
