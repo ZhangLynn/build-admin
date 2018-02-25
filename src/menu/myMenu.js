@@ -110,19 +110,35 @@ class MyLayout extends React.Component{
                                         <Link to="overview">总览</Link>
                                     </Menu.Item>
                                 </SubMenu>
-                                <SubMenu key="charts" title="图表页" onMouseover={()=>{this.showSubheader('charts')}}>
+                                <SubMenu key="charts" title="监测类页面" onMouseover={()=>{this.showSubheader('charts')}}>
                                     <Menu.Item key="charts_map">
-                                        <Link to="charts_map">地图</Link>
+                                        <Link to="charts_map">流量监测</Link>
                                     </Menu.Item>
                                     <Menu.Item key="charts_other">
-                                        <Link to="charts_other">其它图表</Link>
+                                        <Link to="charts_other">威胁监测</Link>
                                     </Menu.Item>
                                 </SubMenu>
                                 <SubMenu key="table" title="表格页" onMouseover={()=>{this.showSubheader('table')}}>
-
+                                    <Menu.Item key="charts_map">
+                                        <Link to="charts_map">搜索类表格</Link>
+                                    </Menu.Item>
+                                    <Menu.Item key="charts_other">
+                                        <Link to="charts_other">详情类表格</Link>
+                                    </Menu.Item>
+                                    <Menu.Item key="charts_other">
+                                        <Link to="charts_other">表格数据导出</Link>
+                                    </Menu.Item>
                                 </SubMenu>
-                                <SubMenu key="units" title="自定义组件页" onMouseover={()=>{this.showSubheader('units')}}>
-
+                                <SubMenu key="units" title="表单页" onMouseover={()=>{this.showSubheader('units')}}>
+                                    <Menu.Item key="charts_map">
+                                        <Link to="charts_map">注册表单</Link>
+                                    </Menu.Item>
+                                    <Menu.Item key="charts_other">
+                                        <Link to="charts_other">上传表单</Link>
+                                    </Menu.Item>
+                                    <Menu.Item key="charts_other">
+                                        <Link to="charts_other">动态修改表单</Link>
+                                    </Menu.Item>
                                 </SubMenu>
                             </Menu>
                         </div>
