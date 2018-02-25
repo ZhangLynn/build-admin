@@ -13,19 +13,6 @@ import './MyLayout.css'
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 
-const Category = ({match}) => {
-    return(
-        <div>
-            <h2>Category</h2>
-        </div>
-    )
-};
-
-const Products = () => (
-    <div>
-        <h2>Products</h2>
-    </div>
-);
 
 const menu = {
     index: [
@@ -140,11 +127,10 @@ class MyLayout extends React.Component{
                             </Menu>
                         </div>
                     </Col>
-                    <Col span="20">
+                    <Col span="21">
                         <div className="layout-body">
                             <Route exact path="/overview" component={Overview}/>
                             <Route path="/charts_other" component={ChartsOhter}/>
-                            <Route path="/units" component={Products}/>
                         </div>
                     </Col>
                 </Row>

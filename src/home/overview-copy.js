@@ -1,34 +1,16 @@
-
-import ReactEcharts from 'echarts-for-react';
-import echarts from 'echarts';
+// require("../lib/china.js");
+// require("../lib/world.js");
 import React from 'react';
 import {Row,Col,Tabs,Radio, Table, Card ,Icon} from 'antd';
 const RadioGroup = Radio.Group;
 const TabPane = Tabs.TabPane;
-require("../lib/china.js");
-require("../lib/world.js");
+import ReactEcharts from 'echarts-for-react';
+import echarts from 'echarts';
 let style={
     card:"",
     chartsNull:""
 };
-var data = [
-    {name: "海门", value: 9},
-    {name: "招远", value: 12},
-    {name: "舟山", value: 12},
-    {name: "盐城", value: 15},
-    {name: "赤峰", value: 16},
-    {name: "青岛", value: 18},
-    {name: "乳山", value: 18},
-    {name: "金昌", value: 19},
-    {name: "泉州", value: 21},
-    {name: "莱西", value: 21},
-    {name: "日照", value: 21},
-    {name: "胶南", value: 22},
-    {name: "南通", value: 23},
-    {name: "拉萨", value: 24},
-    {name: "云浮", value: 24},
-    {name: "梅州", value: 25},
-];
+
 export default class Overview extends React.Component{
     constructor(){
         super();
@@ -39,24 +21,9 @@ export default class Overview extends React.Component{
             cityMapFoLocation:{},
             cityMapFoAttack:[],
             chartsWidth:'100%',
-            barData:[],
-            categoryData:[]
         };
         this.OnRadioChangeForCountry=this.OnRadioChangeForCountry.bind(this);
-        this.convertData=this.convertData.bind(this);
-    }
-    componentDidMount(){
-        this.setOuterEchartsWidth();
-        this.formatBarData();
-    }
-
-    //设置境外的charts宽度
-    setOuterEchartsWidth(){
-        let ele=document.getElementById("innerCharts");
-        let w=ele.offsetWidth;
-        this.setState({
-            chartsWidth:w+"px"
-        });
+        this.convertData=this.convertData.bind(this)
     }
     OnRadioChangeForCountry(e){
         this.setState({
@@ -77,36 +44,20 @@ export default class Overview extends React.Component{
         }
         return res;
     };
-    formatBarData(){
-        let categoryData = [];
-        let barData = [];
-        let sortData=data.sort((a,b)=>{
-            return a.value-b.value
-        })
-        for (var i = 0; i <sortData.length; i++) {
-            categoryData.push(sortData[i].name);
-            barData.push(sortData[i].value);
-        }
-        // console.log(barData)
-        this.setState({
-            categoryData:categoryData,
-            barData:barData
-        })
-    }
     render(){
         return(
             <div>
               <Row>
-                  <Col span={18}>
-                      <Card style={{height:'620px'}} bordered={false}>
+                  <Col span="14">
+                      <Card style={{height:'800px',backgroundColor:'#2b2f3a'}} bordered={false}>
                           <RadioGroup onChange={this.OnRadioChangeForCountry} value={this.state.radioSelectForCountry}>
                               <Radio value={0}>中国</Radio>
                               <Radio value={1}>世界</Radio>
                           </RadioGroup>
                           <div hidden={this.state.radioSelectForCountry !== 0} id="innerCharts">
-                              <ReactEcharts
+                              {this.state.cityMapCnAttack.length===0 ? <h3 className={style.chartsNull}>暂无数据</h3> : <ReactEcharts
                                   // onEvents={onDeviceEvents}
-                                  style={{height: '600px', width: '100%'}}
+                                  style={{height: '550px', width: '100%'}}
                                   option={{
                                       // backgroundColor: '#2b2f3a',
                                       tooltip : {
@@ -193,13 +144,28 @@ export default class Overview extends React.Component{
                                           '#806fd5',
                                       ],
                                   }}
-                              />
+                              />}
+                              {/*<div className={style.attackNumber}>*/}
+                                  {/*<div className={style.left}>*/}
+                                      {/*<h2 className={style.title}>境内攻击：<span>{this.state.china}</span></h2>*/}
+                                      {/*{this.state.chinaTop.map((value,index)=>{*/}
+                                          {/*return <div className={style.content} key={index}>*/}
+                                              {/*<div className={style.flag}><FlagIcon code="cn"/>&nbsp;{value.name+'：'}</div>*/}
+                                              {/*<div className={style.progress}>*/}
+                                                  {/*<span id={value.value} className={style.progressInner} data-num={value.value} data-total={this.state.china} style={{width:((value.value/this.state.china)*90+"%")}}></span>*/}
+                                                  {/*<span className={style.progressText}>{value.value}</span>*/}
+                                              {/*</div>*/}
+                                          {/*</div>*/}
+                                      {/*})}*/}
+                                  {/*</div>*/}
+                              {/*</div>*/}
                           </div>
                           <div hidden={this.state.radioSelectForCountry !== 1}>
-                                  <ReactEcharts
-                                  style={{height: '600px',  width: this.state.chartsWidth}}
+                              {this.state.cityMapFoAttack.length===0 ? <h3 className={style.chartsNull}>暂无数据</h3> : <ReactEcharts
+                                  // onEvents={onDeviceEvents}
+                                  style={{height: '550px',  width: this.state.chartsWidth}}
                                   option={{
-
+                                      backgroundColor: '#2b2f3a',
                                       tooltip : {
                                           trigger: 'item',
                                           formatter:function (params) {
@@ -264,39 +230,33 @@ export default class Overview extends React.Component{
                                           }
                                       ]
                                   }}
-                              />
+                              />}
+                              {/*<div className={style.attackNumber}>*/}
+                                  {/*<div className={style.left}>*/}
+                                      {/*<h2 className={style.title}>境外攻击：<span>{this.state.foreign}</span></h2>*/}
+                                      {/*{this.state.foreignTop.map((value,index)=>{*/}
+                                          {/*return <div className={style.content} key={index}>*/}
+                                              {/*<div className={style.flag}>*/}
+                                                  {/*{(() => {*/}
+                                                      {/*if (value.code ===""||value.code==="Local"){*/}
+                                                          {/*return  <span><Icon type="desktop" />&nbsp;{value.name+'：'}</span>*/}
+                                                      {/*}else{*/}
+                                                          {/*return <span><FlagIcon code={value.code.toLowerCase()}/>&nbsp;{value.name+'：'}</span>*/}
+                                                      {/*}*/}
+
+                                                  {/*})()}*/}
+                                              {/*</div>*/}
+                                              {/*<div className={style.progress}>*/}
+                                                  {/*<span id={value.value} className={style.progressInner} data-num={value.value} data-total={this.state.foreign} style={{width:((value.value/this.state.foreign)*90+"%")}}></span>*/}
+                                                  {/*<span className={style.progressText}>{value.value}</span>*/}
+                                              {/*</div>*/}
+                                          {/*</div>*/}
+                                      {/*})}*/}
+                                  {/*</div>*/}
+                              {/*</div>*/}
                           </div>
                       </Card>
                   </Col>
-                  <Col span={6}>
-                      <Card style={{backgroundColor:"white",height:"600px",border:"1px solid red"}}>
-                          <ReactEcharts
-                              style={{height: '600px',  width: "100%"}}
-                              option={{
-                                  yAxis: {
-                                      data: this.state.categoryData,
-                                      height:"80%"
-                                  },
-                                  xAxis: {
-                                      axisLabel: {show: true}
-                                  },
-                                  title: {
-                                      id: 'statistic',
-                                      text: "平均"
-                                  },
-                                  series: {
-                                      type:"bar",
-                                      color:"rgb(24,144,255)",
-                                      data: this.state.barData
-                                  }
-                              }}
-                          />
-                      </Card>
-
-                  </Col>
-              </Row>
-              <Row>
-
               </Row>
             </div>
         )
