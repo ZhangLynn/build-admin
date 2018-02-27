@@ -11,7 +11,7 @@ let style={
     card:"",
     chartsNull:""
 };
-var data = [
+let data = [
     {name: "海门", value: 9},
     {name: "招远", value: 12},
     {name: "舟山", value: 12},
@@ -29,6 +29,8 @@ var data = [
     {name: "云浮", value: 24},
     {name: "梅州", value: 25},
 ];
+let malTotal={"mal_ip": 1, "mal_email": 0, "privacy": 226, "iot": 149, "mal_app": 0, "mal_ftp": 0, "mal_domain": 2633, "mal_url": 0};
+
 export default class Overview extends React.Component{
     constructor(){
         super();
@@ -40,7 +42,8 @@ export default class Overview extends React.Component{
             cityMapFoAttack:[],
             chartsWidth:'100%',
             barData:[],
-            categoryData:[]
+            categoryData:[],
+            malTotal:malTotal
         };
         this.OnRadioChangeForCountry=this.OnRadioChangeForCountry.bind(this);
         this.convertData=this.convertData.bind(this);

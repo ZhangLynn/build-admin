@@ -1,0 +1,167 @@
+
+
+.card{
+    margin-bottom: 10px;
+    min-height: 395px;
+    .title{
+        color:#607aad;
+        margin-bottom: 8px;
+        .link{
+            float: right;
+            transition: all 0.5s;
+            &:hover{
+                color:#49a9ee;
+                cursor: pointer;
+            }
+        }
+    }
+    .chartsNull{
+        color: #49a9ee;
+        font-size: 20px;
+        text-align: center;
+        line-height: 300px;
+    }
+    :global(&.ant-card-bordered){
+        border:none
+    }
+}
+.tabCard{
+    height: 395px;
+    background-color: #2a2e38;
+    :global(.ant-tabs-bar){
+        margin-bottom: 0px;
+    }
+    .card{
+        height:auto;
+        margin-bottom: 0px;
+    }
+    margin-bottom: 10px;
+}
+.overview{
+    color: #aab0b7;
+}
+.boradcast{
+    a{
+        color:#aab0b7!important;
+        &:hover{
+            color:#aab0b7!important;
+        }
+    }
+    line-height: 40px;
+    font-size: 16px;
+    >span{
+        float: left;
+    }
+}
+.topDate{
+    line-height: 40px;
+    font-size: 18px;
+    margin-top: -10px;
+    color:#49a9ee;
+    h2{
+        float: left;
+        font-size: 18px;
+    }
+    :global(.ant-calendar){
+        width: 245px!important;
+    }
+    :global(.ant-calendar-picker){
+        width: 150px;
+    }
+    :global(.ant-calendar-picker .ant-input){
+        border:none;
+        font-size: 18px;
+        color:#49a9ee;
+        font-weight: bold;
+        background-color: transparent;
+    }
+    :global(.ant-calendar-picker ::-webkit-input-placeholder){
+        color:#49a9ee;
+    }
+    :global(.ant-calendar-picker-icon){
+        top:15px
+    }
+    :global(.ant-calendar-picker-icon:hover){
+        top:15px;
+        cursor: pointer;
+    }
+    :global(.ant-calendar-picker-icon:after){
+        font-size: 18px;
+        color:#49a9ee;
+        font-weight: bold;
+    }
+    :global(.ant-calendar-picker-clear){
+        color:#49a9ee;
+        width: 18px;
+        height: 18px;
+        right: 2px;
+        font-size: 18px;
+        top: 15px;
+        background-color: rgb(34,38,46);
+    }
+    :global(.ant-calendar-picker-clear:hover){
+        color:#49a9ee;
+    }
+}
+.boxContainer{
+    display: flex;
+    .totalNumber{
+        margin-right: 10px;
+        width:calc(11vw);
+        text-align: center;
+        .title{
+            color:#ed452b;
+            font-size: 24px;
+        }
+        .content{
+            color:#aab0b7;
+            padding-top: 10px;
+        }
+    }
+    .boxWrap{
+        height: 100px;
+        width:calc(11vw);
+        padding-right: 5px;
+    }
+}
+
+
+
+.attackNumber {
+    .title{
+        font-weight: 700;
+        color: #607aad;
+    }
+    .left{
+        padding-left: 30px;
+        width: 100%;
+    }
+    .content{
+        width: 100%;
+        line-height: 30px;
+        .flag{
+            float: left;
+            width: 100px;
+        }
+        .progress{
+            float: left;
+            width: 70%;
+            .progressInner{
+                height: 10px;
+                display: inline-block;
+                float: left;
+                margin-top: 10px;
+                background: -webkit-linear-gradient(darkred, rgb(237, 69, 43)); /* Safari 5.1 - 6.0 */
+                background: -o-linear-gradient(darkred, rgb(237, 69, 43)); /* Opera 11.1 - 12.0 */
+                background: -moz-linear-gradient(darkred, rgb(237, 69, 43));
+                background: linear-gradient(to right, darkred, rgb(237, 69, 43));
+            }
+            .progressText{
+                font-size: 16px;
+                margin-left: 10px;
+                color:rgb(237, 69, 43);
+                display: inline-block;
+            }
+        }
+    }
+}

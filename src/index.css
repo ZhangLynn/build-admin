@@ -8,3 +8,6 @@ body {
 }
 .layout-body{
 }
+.card{
+    min-height: 10px!important;
+}

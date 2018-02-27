@@ -1,0 +1,300 @@
+{
+  "ipData":{
+    "status":0,
+    "mtd":[
+      {
+        "rule_type":"Ip/Custom",
+        "description":"测试",
+        "level":20,
+        "src_ip":"192.168.1.1",
+        "rule_name":"ip",
+        "state":1,
+        "create_time":"2018-02-27 15:47:06",
+        "dst_ip":"",
+        "rule_id":3
+      },{
+        "rule_type":"Ip/Custom",
+        "description":"测试",
+        "level":20,
+        "src_ip":"192.168.1.1",
+        "rule_name":"ip",
+        "state":1,
+        "create_time":"2018-02-27 15:47:06",
+        "dst_ip":"",
+        "rule_id":3
+      },{
+        "rule_type":"Ip/Custom",
+        "description":"测试",
+        "level":20,
+        "src_ip":"192.168.1.1",
+        "rule_name":"ip",
+        "state":1,
+        "create_time":"2018-02-27 15:47:06",
+        "dst_ip":"",
+        "rule_id":3
+      },{
+        "rule_type":"Ip/Custom",
+        "description":"测试",
+        "level":20,
+        "src_ip":"192.168.1.1",
+        "rule_name":"ip",
+        "state":1,
+        "create_time":"2018-02-27 15:47:06",
+        "dst_ip":"",
+        "rule_id":3
+      },{
+        "rule_type":"Ip/Custom",
+        "description":"测试",
+        "level":20,
+        "src_ip":"192.168.1.1",
+        "rule_name":"ip",
+        "state":1,
+        "create_time":"2018-02-27 15:47:06",
+        "dst_ip":"",
+        "rule_id":3
+      },{
+        "rule_type":"Ip/Custom",
+        "description":"测试",
+        "level":20,
+        "src_ip":"192.168.1.1",
+        "rule_name":"ip",
+        "state":1,
+        "create_time":"2018-02-27 15:47:06",
+        "dst_ip":"",
+        "rule_id":3
+      },{
+        "rule_type":"Ip/Custom",
+        "description":"测试",
+        "level":20,
+        "src_ip":"192.168.1.1",
+        "rule_name":"ip",
+        "state":1,
+        "create_time":"2018-02-27 15:47:06",
+        "dst_ip":"",
+        "rule_id":3
+      },{
+        "rule_type":"Ip/Custom",
+        "description":"测试",
+        "level":20,
+        "src_ip":"192.168.1.1",
+        "rule_name":"ip",
+        "state":1,
+        "create_time":"2018-02-27 15:47:06",
+        "dst_ip":"",
+        "rule_id":3
+      },{
+        "rule_type":"Ip/Custom",
+        "description":"测试",
+        "level":20,
+        "src_ip":"192.168.1.1",
+        "rule_name":"ip",
+        "state":1,
+        "create_time":"2018-02-27 15:47:06",
+        "dst_ip":"",
+        "rule_id":3
+      },{
+        "rule_type":"Ip/Custom",
+        "description":"测试",
+        "level":20,
+        "src_ip":"192.168.1.1",
+        "rule_name":"ip",
+        "state":1,
+        "create_time":"2018-02-27 15:47:06",
+        "dst_ip":"",
+        "rule_id":3
+      },{
+        "rule_type":"Ip/Custom",
+        "description":"测试",
+        "level":20,
+        "src_ip":"192.168.1.1",
+        "rule_name":"ip",
+        "state":1,
+        "create_time":"2018-02-27 15:47:06",
+        "dst_ip":"",
+        "rule_id":3
+      },{
+        "rule_type":"Ip/Custom",
+        "description":"测试",
+        "level":20,
+        "src_ip":"192.168.1.1",
+        "rule_name":"ip",
+        "state":1,
+        "create_time":"2018-02-27 15:47:06",
+        "dst_ip":"",
+        "rule_id":3
+      },{
+        "rule_type":"Ip/Custom",
+        "description":"测试",
+        "level":20,
+        "src_ip":"192.168.1.1",
+        "rule_name":"ip",
+        "state":1,
+        "create_time":"2018-02-27 15:47:06",
+        "dst_ip":"",
+        "rule_id":3
+      },{
+        "rule_type":"Ip/Custom",
+        "description":"测试",
+        "level":20,
+        "src_ip":"192.168.1.1",
+        "rule_name":"ip",
+        "state":1,
+        "create_time":"2018-02-27 15:47:06",
+        "dst_ip":"",
+        "rule_id":3
+      },{
+        "rule_type":"Ip/Custom",
+        "description":"测试",
+        "level":20,
+        "src_ip":"192.168.1.1",
+        "rule_name":"ip",
+        "state":1,
+        "create_time":"2018-02-27 15:47:06",
+        "dst_ip":"",
+        "rule_id":3
+      },{
+        "rule_type":"Ip/Custom",
+        "description":"测试",
+        "level":20,
+        "src_ip":"192.168.1.1",
+        "rule_name":"ip",
+        "state":1,
+        "create_time":"2018-02-27 15:47:06",
+        "dst_ip":"",
+        "rule_id":3
+      },{
+        "rule_type":"Ip/Custom",
+        "description":"测试",
+        "level":20,
+        "src_ip":"192.168.1.1",
+        "rule_name":"ip",
+        "state":1,
+        "create_time":"2018-02-27 15:47:06",
+        "dst_ip":"",
+        "rule_id":3
+      },{
+        "rule_type":"Ip/Custom",
+        "description":"测试",
+        "level":20,
+        "src_ip":"192.168.1.1",
+        "rule_name":"ip",
+        "state":1,
+        "create_time":"2018-02-27 15:47:06",
+        "dst_ip":"",
+        "rule_id":3
+      },{
+        "rule_type":"Ip/Custom",
+        "description":"测试",
+        "level":20,
+        "src_ip":"192.168.1.1",
+        "rule_name":"ip",
+        "state":1,
+        "create_time":"2018-02-27 15:47:06",
+        "dst_ip":"",
+        "rule_id":3
+      },{
+        "rule_type":"Ip/Custom",
+        "description":"测试",
+        "level":20,
+        "src_ip":"192.168.1.1",
+        "rule_name":"ip",
+        "state":1,
+        "create_time":"2018-02-27 15:47:06",
+        "dst_ip":"",
+        "rule_id":3
+      },{
+        "rule_type":"Ip/Custom",
+        "description":"测试",
+        "level":20,
+        "src_ip":"192.168.1.1",
+        "rule_name":"ip",
+        "state":1,
+        "create_time":"2018-02-27 15:47:06",
+        "dst_ip":"",
+        "rule_id":3
+      },{
+        "rule_type":"Ip/Custom",
+        "description":"测试",
+        "level":20,
+        "src_ip":"192.168.1.1",
+        "rule_name":"ip",
+        "state":1,
+        "create_time":"2018-02-27 15:47:06",
+        "dst_ip":"",
+        "rule_id":3
+      },{
+        "rule_type":"Ip/Custom",
+        "description":"测试",
+        "level":20,
+        "src_ip":"192.168.1.1",
+        "rule_name":"ip",
+        "state":1,
+        "create_time":"2018-02-27 15:47:06",
+        "dst_ip":"",
+        "rule_id":3
+      }
+    ]
+  },
+  "domainData":{
+    "status":0,
+    "mtd":[
+      {
+        "rule_type":"Domain/Custom",
+        "domain":"domain",
+        "description":"test域名",
+        "level":10,
+        "rule_name":"domain",
+        "state":1,
+        "create_time":"2018-02-27 15:53:31",
+        "rule_id":4
+      }
+    ]
+  },
+  "mailData":{
+    "status":0,
+    "mtd":[
+      {
+        "rule_type":"MailBox/Custom",
+        "mail_from":"123465789@qq.com",
+        "description":"测试邮箱",
+        "level":10,
+        "mail_to":"123465789@qq.com",
+        "rule_name":"mail",
+        "state":1,
+        "create_time":"2018-02-27 15:57:58",
+        "rule_id":5
+      }
+    ]
+  },
+  "urlData":{
+    "status":0,
+    "mtd":[
+      {
+        "rule_type":"Link/Custom",
+        "description":"",
+        "level":10,
+        "url":"www.hao123.com",
+        "rule_name":"url",
+        "state":1,
+        "create_time":"2018-02-27 15:58:15",
+        "rule_id":6
+      }
+    ]
+  },
+  "privateData":{
+    "status":0,
+    "mtd":[
+      {
+        "word_name":"密码",
+        "weight":"1",
+        "ruleid":7,
+        "word_list":"账户密码",
+        "caculate_type":1,
+        "state":1,
+        "create_time":"2018-02-27 16:00:56",
+        "descriptor_info":"test",
+        "rule_id":7
+      }
+    ]
+  }
+}
