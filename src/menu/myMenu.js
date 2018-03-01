@@ -1,6 +1,7 @@
 import Overview from '../home/overview'
 import FlowMonitor from '../monitor/flow'
 import CRule from '../configuration/c_rule/c_rule'
+import CManagement from '../configuration/c_management/c_management'
 import Test from './restRouter'
 import React from 'react';
 import {
@@ -145,9 +146,9 @@ class MyLayout extends React.Component{
                                     <Menu.Item key="c_rule">
                                         <Link to="c_rule">自定义配置规则</Link>
                                     </Menu.Item>
-                                    {/*<Menu.Item key="c_management">*/}
-                                        {/*<Link to="c_management">设备管理</Link>*/}
-                                    {/*</Menu.Item>*/}
+                                    <Menu.Item key="c_management">
+                                        <Link to="c_management">设备管理</Link>
+                                    </Menu.Item>
                                 </SubMenu>
                             </Menu>
                         </div>
@@ -157,7 +158,7 @@ class MyLayout extends React.Component{
                             <Route exact path="/overview" component={Overview}/>
                             <Route path="/flow_monitor" component={FlowMonitor}/>
                             <Route path="/c_rule" component={CRule}/>
-                            {/*<Route path="/c_management" component={FlowMonitor}/>*/}
+                            <Route path="/c_management" component={CManagement}/>
                         </div>
                     </Col>
                 </Row>
