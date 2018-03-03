@@ -1,8 +1,9 @@
 import Overview from '../home/overview'
 import FlowMonitor from '../monitor/flow'
+import ThreatMonitor from  '../monitor/threat'
 import CRule from '../configuration/c_rule/c_rule'
 import CManagement from '../configuration/c_management/c_management'
-import Test from './restRouter'
+
 import React from 'react';
 import {
     BrowserRouter as Router,
@@ -13,66 +14,7 @@ import {
 import {Menu,Button,notification,Icon,Row,Col} from 'antd';
 import './MyLayout.css'
 const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
 
-
-const menu = {
-    index: [
-        {
-            "en": "overview",
-            "ch": "总览",
-        }
-    ],
-    charts: [
-        {
-            "en": "charts_map",
-            "ch": "地图"
-        }, {
-            "en": "charts_other",
-            "ch": "其它图表"
-        },
-    ],
-    table: [
-        {
-            "en": "e_email",
-            "ch": "表格"
-        },
-        {
-            "en": "e_file",
-            "ch": "详情表格"
-        }
-    ],
-    units: [
-        {
-            "en": "a_email",
-            "ch": "标签组件"
-        }, {
-            "en": "a_qq",
-            "ch": "国旗组件"
-        }, {
-            "en": "a_phone",
-            "ch": "轮播组件"
-        }
-    ],
-    configuration: [
-        {
-            "en": "c_rule",
-            "ch": "自定义规则"
-        }, {
-            "en": "c_memory",
-            "ch": "存储管理"
-        }, {
-            "en": "c_management",
-            "ch": "设备管理"
-        }
-    ],
-    usermanagement: [
-        {
-            "en": "u_management",
-            "ch": "用户管理"
-        }
-    ]
-};
 class MyLayout extends React.Component{
     constructor(props){
         super(props);
@@ -116,8 +58,8 @@ class MyLayout extends React.Component{
                                     <Menu.Item key="charts_map">
                                         <Link to="flow_monitor">流量监测</Link>
                                     </Menu.Item>
-                                    <Menu.Item key="charts_other">
-                                        <Link to="charts_other">威胁监测</Link>
+                                    <Menu.Item key="threat_monitor">
+                                        <Link to="threat_monitor">威胁监测</Link>
                                     </Menu.Item>
                                 </SubMenu>
                                 <SubMenu key="table" title="表格页" onMouseover={()=>{this.showSubheader('table')}}>
@@ -157,6 +99,7 @@ class MyLayout extends React.Component{
                         <div className="layout-body">
                             <Route exact path="/overview" component={Overview}/>
                             <Route path="/flow_monitor" component={FlowMonitor}/>
+                            <Route path="/threat_monitor" component={ThreatMonitor}/>
                             <Route path="/c_rule" component={CRule}/>
                             <Route path="/c_management" component={CManagement}/>
                         </div>
