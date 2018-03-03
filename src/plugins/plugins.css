@@ -1,0 +1,78 @@
+
+.myIcon:hover {
+    color: #008fec;
+}
+
+.myIcon {
+    cursor: pointer;
+}
+
+.searchTag {
+    border-radius: 5px;
+    padding: 3px 3px 3px 3px;
+    height: 26px;
+    line-height: 27px;
+    background-color: white;
+    border: 1px solid #d9d9d9;
+    margin-left: 8px;
+}
+
+/*boxview*/
+a:hover {
+    color: black;
+}
+
+.col {
+    backgroundColor: '#00c0ef' !important;
+    padding-left: 0
+}
+
+.boxview{
+    height: 100px;
+    width: 200px;
+}
+
+.small-box {
+    border-radius: 2px;
+    position: relative;
+    display: block;
+    padding-bottom: 10px;
+    /*height: 100px;*/
+    /*width: 200px;*/
+}
+
+.small-box h3 {
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    white-space: nowrap;
+    padding: 0;
+    color: white;
+}
+
+.small-box p {
+    font-size: 15px;
+    color: white;
+}
+
+.small-box .icon {
+    transition: all .3s;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 40px;
+    color: rgba(0, 0, 0, 0.15);
+}
+
+.small-box .iconOver {
+    transition: all .3s;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 42px;
+    color: rgba(0, 0, 0, 0.15);
+}
+
+.inner {
+    padding: 10px;
+}
