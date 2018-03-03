@@ -1,8 +1,10 @@
 import ReactEcharts from 'echarts-for-react';
+import {FlowCharts,PieCharts} from '../plugins'
 import echarts from 'echarts';
 import React from 'react';
 import {Row, Col,Card,Modal} from 'antd';
 import style from "./flow.less"
+
 let userCount={"status": 0, "data": {"pc_user": 0, "other_user": 0, "mobile_threat": 0, "pc_threat": 0, "othrt_threat": 0, "mobile_user": 0}};
 let influencedThreat={"status": 0, "data": [{"name": "\u6728\u9a6c\u5a01\u80c1", "value": 2637}, {"name": "\u9690\u79c1\u6cc4\u9732", "value": 226}, {"name": "\u7f51\u7edc\u653b\u51fb", "value": 149}]};
 let threatIp={"status": 0, "data": [{"name": "118.193.215.71", "value": 188}, {"name": "121.43.168.184", "value": 175}, {"name": "124.232.157.120", "value": 119}, {"name": "140.205.94.7", "value": 91}, {"name": "115.29.79.228", "value": 119}]};
@@ -36,7 +38,6 @@ export default class FlowMonitor extends React.Component {
         this.formatData("threatIp");
         this.formatData("appTypeTop");
         // this.formatData("malTotal");
-        console.log(this.state.userCount)
     }
     formatData(type){
         switch (type){
@@ -169,6 +170,16 @@ export default class FlowMonitor extends React.Component {
             }
         }
     }
+    openTrojanThreatModal=()=>{
+        this.setState({
+            trojanThreatEventVisible:true
+        })
+    }
+    handleCancel=()=>{
+        this.setState({
+            trojanThreatEventVisible:false
+        })
+    }
     render() {
         let grid= {
             left: '3%',
@@ -194,7 +205,7 @@ export default class FlowMonitor extends React.Component {
         let lineColor='#aab0b7';
         return (
             <div>
-                <Row style={{marginTop: 24}} gutter={64}>
+                <Row style={{marginTop: 24}}>
                     <Col span={8}>
                         <Card className={style.card} bordered={false}>
                             <h2 className={style.title}>今日用户统计</h2>
@@ -595,206 +606,12 @@ export default class FlowMonitor extends React.Component {
                     </Col>
                     <Col span={8}>
                         <Card className={style.card} bordered={false}>
-                            <h2 className={style.title}>威胁来源IP</h2>
-                            { this.state.threatIp.yData.length === 0? <h3 className={style.chartsNull}>暂无数据</h3> : <ReactEcharts
-                                option = {{
-                                    color:['#0153b0'],
-                                    tooltip: {
-                                        trigger: 'axis',
-                                        axisPointer: {
-                                            type: 'shadow'
-                                        }
-                                    },
-                                    grid: {...grid},
-                                    xAxis: {
-                                        type: 'value',
-                                        show:false,
-                                        splitLine:{
-                                            show:false
-                                        }
-                                    },
-                                    yAxis: {
-                                        type: 'category',
-                                        data: this.state.threatIp.yData,
-                                        axisLine:{
-                                            lineStyle:{
-                                                color:'#aab0b7',
-                                            }
-                                        },
-                                        axisTick: {
-                                            show: false
-                                        },
-                                        splitLine:{
-                                            show:false
-                                        }
-                                    },
-                                    series: [
-                                        {
-                                            ...horizontalbar,
-                                            itemStyle : {
-                                                normal: {
-                                                    label:{
-                                                        show: true,
-                                                        position: 'right',
-                                                        color:"#1c88c9"
-                                                    },
-                                                    color: new echarts.graphic.LinearGradient(
-                                                        1, 0, 0, 1,
-                                                        [
-                                                            {offset: 1, color: '#1c88c9'},
-                                                            {offset: 0, color: '#14c8d4'}
-                                                        ]
-                                                    ),
-                                                    shadowBlur: 10,
-                                                    shadowColor: 'rgba(67, 138, 298, 0.3)',
-                                                    // barBorderRadius: 10,
-                                                    shadowOffsetX:[ 1 ],
-                                                    shadowOffsetY:[ 1 ],
-                                                },
-                                                // emphasis:{
-                                                //     color:["red"]
-                                                // }
-                                            },
-                                            data: this.state.threatIp.xData,
-                                        },
-                                    ]
-                                }}
-                            />}
+                            <h2 className={style.title}>威胁来源分析</h2>
+                            <FlowCharts></FlowCharts>
                         </Card>
                         <Card className={style.card} bordered={false}>
-                            <h2 className={style.title}>应用行为TOP10 <span className={style.link} onClick={this.openAppTypeModal}>更多</span></h2>
-                            <Modal
-                                visible={this.state.appTypeTopVisible}
-                                title="应用行为TOP10"
-                                onCancel={this.handleCancel}
-                                footer={null}
-                                className="black-modal"
-                            >
-                                <ReactEcharts
-                                    // onEvents={onDeviceEvents}
-                                    option = {{
-                                        color:['#49a9ee'],
-                                        tooltip: {
-                                            trigger: 'axis',
-                                            axisPointer: {
-                                                type: 'shadow'
-                                            }
-                                        },
-                                        grid: {...grid},
-                                        xAxis: {
-                                            type: 'value',
-                                            show:false,
-                                            splitLine:{
-                                                show:false
-                                            }
-                                        },
-                                        yAxis: {
-                                            type: 'category',
-                                            data: this.state.appTypeTop.all.titledata,
-                                            axisLine:{
-                                                lineStyle:{
-                                                    color:'#aab0b7',
-                                                }
-                                            },
-                                            splitLine:{
-                                                show:false
-                                            }
-                                        },
-                                        series: [
-                                            {
-                                                ...horizontalbar,
-                                                itemStyle : {
-                                                    normal: {
-                                                        label:{
-                                                            show: true,
-                                                            position: 'right',
-                                                            color:"#49a9ee"
-                                                        },
-                                                        color: new echarts.graphic.LinearGradient(
-                                                            1, 0, 0, 1,
-                                                            [
-                                                                {offset: 1, color: '#49a9ee'},
-                                                                {offset: 0, color: '#14c8d4'}
-                                                            ]
-                                                        ),
-                                                        shadowBlur: 10,
-                                                        shadowColor: 'rgba(67, 138, 298, 0.3)',
-                                                        // barBorderRadius: 10,
-                                                        shadowOffsetX:[ 1 ],
-                                                        shadowOffsetY:[ 1 ],
-                                                    },
-                                                    // emphasis:{
-                                                    //     color:["red"]
-                                                    // }
-                                                },
-                                                data: this.state.appTypeTop.all.data
-                                            },
-                                        ]
-                                    }}
-                                />
-                            </Modal>
-                            {this.state.appTypeTop.top5.titledata.length=== 0 ? <h3 className={style.chartsNull}>暂无数据</h3> : <ReactEcharts
-                                // onEvents={onDeviceEvents}
-                                option = {{
-                                    color:['#49a9ee'],
-                                    tooltip: {
-                                        trigger: 'axis',
-                                        axisPointer: {
-                                            type: 'shadow'
-                                        }
-                                    },
-                                    grid: {...grid},
-                                    xAxis: {
-                                        type: 'value',
-                                        show:false,
-                                        splitLine:{
-                                            show:false
-                                        }
-                                    },
-                                    yAxis: {
-                                        type: 'category',
-                                        data: this.state.appTypeTop.top5.titledata,
-                                        axisLine:{
-                                            lineStyle:{
-                                                color:'#aab0b7',
-                                            }
-                                        },
-                                        splitLine:{
-                                            show:false
-                                        }
-                                    },
-                                    series: [
-                                        {
-                                            ...horizontalbar,
-                                            itemStyle : {
-                                                normal: {
-                                                    label:{
-                                                        show: true,
-                                                        position: 'right',
-                                                        color:"#49a9ee"
-                                                    },
-                                                    color: new echarts.graphic.LinearGradient(
-                                                        1, 0, 0, 1,
-                                                        [
-                                                            {offset: 1, color: '#49a9ee'},
-                                                            {offset: 0, color: '#14c8d4'}
-                                                        ]
-                                                    ),
-                                                    shadowBlur: 10,
-                                                    shadowColor: 'rgba(67, 138, 298, 0.3)',
-                                                    // barBorderRadius: 10,
-                                                    shadowOffsetX:[ 1 ],
-                                                    shadowOffsetY:[ 1 ],
-                                                },
-                                                // emphasis:{
-                                                //     color:["red"]
-                                                // }
-                                            },
-                                            data:  this.state.appTypeTop.top5.data
-                                        },
-                                    ]
-                                }}
-                            />}
+                            <h2 className={style.title}>应用行为TOP10</h2>
+                            <PieCharts></PieCharts>
                         </Card>
                     </Col>
                 </Row>
