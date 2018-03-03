@@ -156,15 +156,15 @@ module.exports = {
           // "style" loader turns CSS into JS modules that inject <style> tags.
           // In production, we use a plugin to extract that CSS to a file, but
           // in development "style" loader enables hot editing of CSS.
+
           {
-            test: /\.(css|less)$/,
+            test: /\.css$/,
             use: [
               require.resolve('style-loader'),
               {
                 loader: require.resolve('css-loader'),
                 options: {
                   importLoaders: 1,
-                  // modules: true
                 },
               },
               {
@@ -183,17 +183,45 @@ module.exports = {
                         'not ie < 9', // React doesn't support IE8 anyway
                       ],
                       flexbox: 'no-2009',
-                    }),
-                  ],
-                },
-              },
-              {
-                  loader: require.resolve('less-loader'), // compiles Less to CSS
-                  options: {
-                      modules: true
-                  },
-              },
+                    })
+                  ]
+                }
+              }
             ],
+          },
+          {
+              test: /\.less$/,
+              exclude: [/node_modules/],
+              // loader:"style-loader!css-loader?modules&localIdentName=[name]__[local]___[hash:base64:5]!less-loader",
+              use: [
+                  require.resolve('style-loader'),
+                  {
+                      loader: require.resolve('css-loader'),
+                      options: {
+                          modules: true,
+                          localIndexName:"[name]__[local]___[hash:base64:5]"
+                      },
+                  },
+                  {
+                      loader: require.resolve('less-loader'), // compiles Less to CSS
+                  },
+              ],
+          },
+          {
+              test: /\.less$/,
+              exclude: [/src/],
+              use: [
+                  require.resolve('style-loader'),
+                  {
+                      loader: require.resolve('css-loader'),
+                      options: {
+                          importLoaders: 1,
+                      },
+                  },
+                  {
+                      loader: require.resolve('less-loader'), // compiles Less to CSS
+                  },
+              ],
           },
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.
