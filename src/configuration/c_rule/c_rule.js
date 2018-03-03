@@ -1,6 +1,4 @@
-/**
- * Created by zhangzilong on 17-1-6.
- */
+
 import React from 'react';
 import {Row, Col, Button, Card, Table, Input, Modal, Form, Select, Radio, Spin, Popconfirm} from 'antd';
 import Config from '../../config';

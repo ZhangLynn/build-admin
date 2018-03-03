@@ -1,5 +1,4 @@
 
-
 import React from 'react';
 import { Row, Col, Button, Table, Progress,Radio, Modal,Form,Input,Select} from 'antd';
 import './c_management.css'
@@ -319,97 +318,92 @@ class CManagement extends React.Component{
 
 
         return(
-            <div className="c_management cfortable">
-                <Row type="flex" justify="start">
-                    <Col span={2}>
-                        <Button type="primary" icon="file" onClick={this.showModal.bind(null, "", "mtdRuleAdd","新增",'ip')}>IP配置</Button>
+            <div style={{padding:"20px"}}>
+                <Row>
+                    <Col span={12}>
+                        <Row style={{paddingTop:"20px"}}>
+                            <Col span={4} style={{
+                                fontSize: 14,
+                            }}>
+                                <span>设备ID:</span>
+                            </Col>
+                            <Col span={20} style={{
+                                fontSize: 14
+                            }}>
+                                <span>{this.state.device_id}</span>
+                            </Col>
+                        </Row>
+                        <Row style={{paddingTop:"20px"}}>
+                            <Col span={4} style={{
+                                fontSize: 14,
+                            }}>
+                                <span>设备型号:</span>
+                            </Col>
+                            <Col span={20} style={{
+                                fontSize: 14
+                            }}>
+                                <span>{this.state.device_model}</span>
+                            </Col>
+                        </Row>
+                        <Row style={{paddingTop:"20px"}}>
+                            <Col span={4} style={{
+                                fontSize: 14,
+                            }}>
+                                <span>操作系统:</span>
+                            </Col>
+                            <Col span={20} style={{
+                                fontSize: 14
+                            }}>
+                                <span>{this.state.system_type}</span>
+                            </Col>
+                        </Row>
+                        <Row style={{paddingTop:"20px"}}>
+                            <Col span={4} style={{
+                                fontSize: 14,
+                            }}>
+                                <span>当前用户:</span>
+                            </Col>
+                            <Col span={20} style={{
+                                fontSize: 14
+                            }}>
+                                <span>{this.state.user}</span>
+                            </Col>
+                        </Row>
+                        <Row style={{paddingTop:"20px"}}>
+                            <Col span={4} style={{
+                                fontSize: 14,
+                            }}>
+                                <span>持续运行时间:</span>
+                            </Col>
+                            <Col span={20} style={{
+                                fontSize: 14
+                            }}>
+                                <span>{this.state.running}</span>
+                            </Col>
+                        </Row>
                     </Col>
-                    <Col span={2}>
-                        <Button type="primary" icon="download" onClick={this.showModal.bind(null, "", "mtdRuleAdd","新增",'save')}>存储配置</Button>
-                    </Col>
-                    <Col span={2}>
-                        <Button type="primary" icon="reload" onClick={this.showConfirm.bind(this,"确认试行设备重启?")}>设备重启</Button>
+                    <Col span={12}>
+                        <Row type="flex" justify="start" style={{marginTop:"20px"}}>
+                            <Col span={3}>
+                                <Button type="primary" icon="file" onClick={this.showModal.bind(null, "", "mtdRuleAdd","新增",'ip')}>IP配置</Button>
+                            </Col>
+                            <Col span={3}>
+                                <Button type="primary" icon="download" onClick={this.showModal.bind(null, "", "mtdRuleAdd","新增",'save')}>存储配置</Button>
+                            </Col>
+                            <Col span={3}>
+                                <Button type="primary" icon="reload" onClick={this.showConfirm.bind(this,"确认试行设备重启?")}>设备重启</Button>
 
-                    </Col>
-                    <Col span={2}>
-                        <Button type="primary" icon="poweroff" onClick={this.showConfirm.bind(this,"确认试行设备关机?")}>设备关机</Button>
-                    </Col>
-                    <Col span={2} >
-                        <Button type="primary" icon="sync" onClick={this.showConfirm.bind(this,"确认清除系统数据?")}>清除数据</Button>
-                    </Col>
-                </Row>
-                <Row style={{paddingTop:"20px"}}>
-                    <Col span={2} style={{
-                        fontSize: 14,
-                    }}>
-                        <span>设备ID:</span>
-                    </Col>
-                    <Col span={3} style={{
-                        fontSize: 14
-                    }}>
-                        <span>{this.state.device_id}</span>
+                            </Col>
+                            <Col span={3}>
+                                <Button type="primary" icon="poweroff" onClick={this.showConfirm.bind(this,"确认试行设备关机?")}>设备关机</Button>
+                            </Col>
+                            <Col span={3} >
+                                <Button type="primary" icon="sync" onClick={this.showConfirm.bind(this,"确认清除系统数据?")}>清除数据</Button>
+                            </Col>
+                        </Row>
                     </Col>
                 </Row>
-                <Row style={{paddingTop:"20px"}}>
-                    <Col span={2} style={{
-                        fontSize: 14,
-                    }}>
-                        <span>设备型号:</span>
-                    </Col>
-                    <Col span={3} style={{
-                        fontSize: 14
-                    }}>
-                        <span>{this.state.device_model}</span>
-                    </Col>
-                </Row>
-                {/* <Row style={{paddingTop:"20px"}}>
-                    <Col span={2} style={{
-                        fontSize: 14,
-                    }}>
-                        <span>操作时间:</span>
-                    </Col>
-                    <Col span={3} style={{
-                        fontSize: 14
-                    }}>
-                        <span>{this.state.equipmenttime}</span>
-                    </Col>
-                </Row> */}
-                <Row style={{paddingTop:"20px"}}>
-                    <Col span={2} style={{
-                        fontSize: 14,
-                    }}>
-                        <span>操作系统:</span>
-                    </Col>
-                    <Col span={3} style={{
-                        fontSize: 14
-                    }}>
-                        <span>{this.state.system_type}</span>
-                    </Col>
-                </Row>
-                <Row style={{paddingTop:"20px"}}>
-                    <Col span={2} style={{
-                        fontSize: 14,
-                    }}>
-                        <span>当前用户:</span>
-                    </Col>
-                    <Col span={3} style={{
-                        fontSize: 14
-                    }}>
-                        <span>{this.state.user}</span>
-                    </Col>
-                </Row>
-                <Row style={{paddingTop:"20px"}}>
-                    <Col span={2} style={{
-                        fontSize: 14,
-                    }}>
-                        <span>持续运行时间:</span>
-                    </Col>
-                    <Col span={3} style={{
-                        fontSize: 14
-                    }}>
-                        <span>{this.state.running}</span>
-                    </Col>
-                </Row>
+
                 <Row style={{paddingTop:"20px"}} type="flex"  align="middle">
                     <Col span={2} style={{
                         fontSize: 14,
