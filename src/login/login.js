@@ -6,7 +6,7 @@ import {Redirect} from 'react-router-dom'
 // 两个reducers 每个reducers都有一个state
 // 合并reducers
 @connect(
-    state=>state.auth,
+    state=>state,
     {login, getUserData}
 )
 class Login extends React.Component{
