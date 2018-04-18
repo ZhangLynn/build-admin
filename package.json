@@ -105,7 +105,13 @@
       "react-app"
     ],
     "plugins": [
-      "transform-decorators-legacy"
+      [
+        "import",
+        {
+          "libraryName": "antd",
+          "style": true
+        }
+      ]
     ]
   },
   "eslintConfig": {
